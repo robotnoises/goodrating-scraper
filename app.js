@@ -1,11 +1,12 @@
 const express = require('express');
 const app = express();
-
-const Response = require('./models/Response');
-const Scraper = require('./lib/Scraper');
 const pages = require('./config/pages').pages;
+const Scraper = require('./lib/Scraper');
+const filesystem = require('./lib/filesystem');
+const Response = require('./models/Response');
+const WriteFile = require('./models/WriteFile');
 
-// Let's get scrapy
+// Let's get scrapey
 const scraper = new Scraper(pages);
 
 /**
@@ -23,7 +24,13 @@ app.get('/', (req, res) => {
 app.post('/api/v1/scrape', (req, res) => {
   scraper.go()
     .then(result => {
-      res.status(200).json(new Response(200, 'OK', result));
+      return Promise.all([
+        result,
+        filesystem.writeFiles(result.map(r => new WriteFile(r.name, r.data)))
+      ])
+    })
+    .then(result => {
+      res.status(200).json(new Response(200, 'OK', result[0]));
     })
     .catch(err => {
       res.status(503).json(err);
