@@ -25,6 +25,11 @@ const totalDefenseSelector = {
   numyards_total: ['td[data-stat="opp_tot_yds"]'],
 };
 
+const teamTalentSelector = {
+  name: ['div.name a span'],
+  score: ['div.right-content a.number'],
+};
+
 module.exports = {
   pages: [
     new Page(
@@ -46,6 +51,13 @@ module.exports = {
       'team_defense',
       'https://www.sports-reference.com/cfb/years/2017-team-defense.html',
       totalDefenseSelector
+    ),
+    new Page(
+      'team_talent',
+      'http://247sports.com/Season/2017-Football/CollegeTeamTalentComposite',
+      teamTalentSelector
     )
   ],
 };
+
+// 'li.showmore_blk a'
