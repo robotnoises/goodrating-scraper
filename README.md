@@ -1,0 +1,1 @@
+Credits: Favicon is "Rugby" by Baboon designs from the Noun Project

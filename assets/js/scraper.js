@@ -1,7 +1,22 @@
-// Globals
+// Selectors
 
 var $btn;
+var $previews;
+var $pre_to;
+
+// Flags
+
 var idle = true;
+
+// Utils
+
+function togglePreviews(show) {
+  if (show) {
+    $previews.removeClass('hide');
+  } else {
+    $previews.addClass('hide');
+  }
+}
 
 // Respnse Handlers
 
@@ -13,7 +28,8 @@ var idle = true;
 function handleScrapeResponse(response) {
   if (response.msg === 'OK') {
     idle = true;
-    console.log(response);
+    $pre_to.text(JSON.stringify(response.data, null, 2));
+    togglePreviews(true);
   }
 }
 
@@ -53,6 +69,9 @@ function handleScrapeBtnClick($event) {
 
 function init() {
   $btn = $('#scrapebtn');
+  $previews = $('.preview-container');
+  $pre_to = $('#preview_total_offense');
+
   $btn.click(handleScrapeBtnClick);
 }
 

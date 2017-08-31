@@ -1,5 +1,7 @@
 const express = require('express');
 const app = express();
+
+const Response = require('./models/Response');
 const Scraper = require('./lib/Scraper');
 const pages = require('./config/pages').pages;
 
@@ -19,16 +21,20 @@ app.get('/', (req, res) => {
  */
 
 app.post('/api/v1/scrape', (req, res) => {
-  res.status(200).json({
-    msg: 'OK',
-  });
+  scraper.go()
+    .then(result => {
+      res.status(200).json(new Response(200, 'OK', result));
+    })
+    .catch(err => {
+      res.status(503).json(err);
+    });
 });
 
 /**
  * Server
  */
 
-app.listen(3000, () => {  
+app.listen(8888, () => {  
   console.log('started!');
 });
 
@@ -37,3 +43,5 @@ app.listen(3000, () => {
  */
 
 app.use('/assets/js', express.static('assets/js'));
+app.use('/assets/img', express.static('assets/img'));
+app.use('/assets/style', express.static('assets/style'));

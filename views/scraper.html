@@ -1,14 +1,19 @@
 <html>
   <thead>
-    <title>David's good ass sports stat scraper</title>
+    <title>Goodrating Scraper</title>
+
+    <link rel="icon" type="image/png" href="/assets/img/favicon-32x32.png?v=847529347598347" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/assets/img/favicon-16x16.png?v=096797832765423" sizes="16x16" />
+    <link rel="stylesheet" type="text/css" href="/assets/style/index.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </thead>
   <tbody>
     <div>
       <button id="scrapebtn">Begin scrape</button>
     </div>
-    <div>
-      <pre id="preview_total_offense"></pre>
+    <div class="hide preview-container">
+      <h2>Total Offense (Preview)</h2>
+      <pre class="preview" id="preview_total_offense"></pre>
     </div>
     <script src="/assets/js/scraper.js"></script>
   </tbody>

@@ -1,0 +1,10 @@
+.preview {
+  display: block;
+  padding: 25px;
+  background-color: #fafafa;
+  width: 600px;
+}
+
+.hide {
+  display: none;
+}
