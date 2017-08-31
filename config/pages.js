@@ -8,6 +8,11 @@ const teamRecordSelector = {
   ats: ['table tbody tr td:nth-child(5)'],
 };
 
+const teamSosSelector = {
+  name: ['table tbody tr td:nth-child(2)'],
+  sos_rating: ['table tbody tr td:nth-child(3)'],
+};
+
 const totalOffenseSelector = {
   name: ['td[data-stat="school_name"] a'],
   numplays_total: ['td[data-stat="tot_plays"]'],
@@ -26,6 +31,11 @@ module.exports = {
       'team_records',
       'https://www.teamrankings.com/ncf/trends/win_trends/',
       teamRecordSelector
+    ),
+    new Page(
+      'team_sos',
+      'https://www.teamrankings.com/college-football/ranking/schedule-strength-by-other',
+      teamSosSelector
     ),
     new Page(
       'team_offense',
