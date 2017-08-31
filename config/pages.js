@@ -59,5 +59,3 @@ module.exports = {
     )
   ],
 };
-
-// 'li.showmore_blk a'

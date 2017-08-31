@@ -1,9 +1,8 @@
 class Page {
-  constructor(name, url, selectors, paginate) {
+  constructor(name, url, selectors) {
     this.name = name;
     this.url = url;
     this.selectors = selectors;
-    this.paginate = paginate || null;
   }
 }
 
