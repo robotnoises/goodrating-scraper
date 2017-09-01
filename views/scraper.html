@@ -5,15 +5,26 @@
     <link rel="icon" type="image/png" href="/assets/img/favicon-32x32.png?v=847529347598347" sizes="32x32" />
     <link rel="icon" type="image/png" href="/assets/img/favicon-16x16.png?v=096797832765423" sizes="16x16" />
     <link rel="stylesheet" type="text/css" href="/assets/style/index.css">
+    <link href="https://fonts.googleapis.com/css?family=Signika:400,700" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </thead>
   <tbody>
-    <div>
-      <button id="scrapebtn">Begin scrape</button>
-    </div>
-    <div class="hide preview-container">
-      <h2>Total Offense (Preview)</h2>
-      <pre class="preview" id="preview_total_offense"></pre>
+    <div class="container">
+      <div>
+        <button class="shadow gradient-purple" id="scrapebtn">Run</button>
+        <button id="loadbtn" class="shadow gradient-purple hide unclickable" id="scrapebtn">
+          <i class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="hide preview-container shadow">
+        <h2>Results (preview)</h2>
+        <div>
+          <button class="gradient-red">Download</button>
+          <input type="text" placeholder="Type suffix for filename(s)" />
+        </div>
+        <pre class="preview" id="preview_total_offense"></pre>
+      </div>
     </div>
     <script src="/assets/js/scraper.js"></script>
   </tbody>

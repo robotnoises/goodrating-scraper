@@ -1,6 +1,7 @@
 // Selectors
 
 var $btn;
+var $btn_loading;
 var $previews;
 var $pre_to;
 
@@ -18,6 +19,16 @@ function togglePreviews(show) {
   }
 }
 
+function toggleButtons(show) {
+  if (show) {
+    $btn.addClass('hide');
+    $btn_loading.removeClass('hide');
+  } else {
+    $btn.removeClass('hide');
+    $btn_loading.addClass('hide');
+  }
+}
+
 // Respnse Handlers
 
 /**
@@ -31,6 +42,8 @@ function handleScrapeResponse(response) {
     $pre_to.text(JSON.stringify(response.data, null, 2));
     togglePreviews(true);
   }
+
+  toggleButtons(false);
 }
 
 /**
@@ -40,11 +53,14 @@ function handleScrapeResponse(response) {
  */
 function handleScrapeError(response) {
   console.error(response);
+  toggleButtons(false);
 }
 
 // Requests
 
 function doScrapeRequest(cb) {
+  toggleButtons(true);
+
   $.post('/api/v1/scrape')
     .done(handleScrapeResponse)
     .fail(handleScrapeError);
@@ -69,6 +85,7 @@ function handleScrapeBtnClick($event) {
 
 function init() {
   $btn = $('#scrapebtn');
+  $btn_loading = $('#loadbtn');
   $previews = $('.preview-container');
   $pre_to = $('#preview_total_offense');
 
