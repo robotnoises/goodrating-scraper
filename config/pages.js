@@ -9,7 +9,7 @@ const teamRecordSelector = {
 };
 
 const teamSosSelector = {
-  name: ['table tbody tr td:nth-child(2)'],
+  name: ['table tbody tr td:nth-child(2) a'],
   sos_rating: ['table tbody tr td:nth-child(3)'],
 };
 
