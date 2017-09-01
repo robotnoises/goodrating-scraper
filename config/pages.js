@@ -51,11 +51,68 @@ module.exports = {
       'team_defense',
       'https://www.sports-reference.com/cfb/years/2017-team-defense.html',
       totalDefenseSelector
-    ),
-    new Page(
-      'team_talent',
-      'http://247sports.com/Season/2017-Football/CollegeTeamTalentComposite',
-      teamTalentSelector
     )
   ],
 };
+
+// Uncomment to crawl team talent pages
+
+// module.exports = {
+//   pages: [
+//     new Page(
+//       'team_talent1',
+//       'http://247sports.com/Season/2017-Football/CollegeTeamTalentComposite?Conference=AAC',
+//       teamTalentSelector
+//     ),
+//     new Page(
+//       'team_talent2',
+//       'http://247sports.com/Season/2017-Football/CollegeTeamTalentComposite?Conference=ACC',
+//       teamTalentSelector
+//     ),
+//     new Page(
+//       'team_talent3',
+//       'http://247sports.com/Season/2017-Football/CollegeTeamTalentComposite?Conference=Big-12',
+//       teamTalentSelector
+//     ),
+//     new Page(
+//       'team_talent4',
+//       'http://247sports.com/Season/2017-Football/CollegeTeamTalentComposite?Conference=Big-Ten',
+//       teamTalentSelector
+//     ),
+//     new Page(
+//       'team_talent5',
+//       'http://247sports.com/Season/2017-Football/CollegeTeamTalentComposite?Conference=C-USA',
+//       teamTalentSelector
+//     ),
+//     new Page(
+//       'team_talent6',
+//       'http://247sports.com/Season/2017-Football/CollegeTeamTalentComposite?Conference=IND',
+//       teamTalentSelector
+//     ),
+//     new Page(
+//       'team_talent7',
+//       'http://247sports.com/Season/2017-Football/CollegeTeamTalentComposite?Conference=MAC',
+//       teamTalentSelector
+//     ),
+//     new Page(
+//       'team_talent8',
+//       'http://247sports.com/Season/2017-Football/CollegeTeamTalentComposite?Conference=M-West',
+//       teamTalentSelector
+//     ),
+//     new Page(
+//       'team_talent9',
+//       'http://247sports.com/Season/2017-Football/CollegeTeamTalentComposite?Conference=Pac-12',
+//       teamTalentSelector
+//     ),
+//     new Page(
+//       'team_talent10',
+//       'http://247sports.com/Season/2017-Football/CollegeTeamTalentComposite?Conference=SBC',
+//       teamTalentSelector
+//     ),
+//     new Page(
+//       'team_talent11',
+//       'http://247sports.com/Season/2017-Football/CollegeTeamTalentComposite?Conference=SEC',
+//       teamTalentSelector
+//     )
+//   ],
+// };
