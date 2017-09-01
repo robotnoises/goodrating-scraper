@@ -11,17 +11,17 @@
   </thead>
   <tbody>
     <div class="container">
-      <div>
+      <h1 class="text-center">Scrape-o-matic 3000 <span class="small">v0.1</span></h1>
+      <div class="text-center">
         <button class="shadow gradient-purple" id="scrapebtn">Run</button>
         <button id="loadbtn" class="shadow gradient-purple hide unclickable" id="scrapebtn">
           <i class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i>
         </button>
       </div>
       <div class="hide preview-container shadow">
-        <h2>Results (preview)</h2>
         <div>
-          <button class="gradient-red">Download</button>
-          <input type="text" placeholder="Type suffix for filename(s)" />
+          <button id="downloadbtn" class="gradient-red">Download</button>
+          <input id="suffix" type="text" placeholder="Type suffix for filename(s)" />
         </div>
         <pre class="preview" id="preview_total_offense"></pre>
       </div>

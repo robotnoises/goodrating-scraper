@@ -111,3 +111,12 @@ input {
 .gradient-red {
   background-image: linear-gradient(120deg, #fe5196 0%, #f77062 100%);
 }
+
+.text-center {
+  text-align: center;
+}
+
+.small {
+  font-size: 0.5em;
+  opacity: 0.5;
+}

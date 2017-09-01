@@ -1,8 +1,10 @@
 // Selectors
 
-var $btn;
+var $btn_run;
 var $btn_loading;
+var $btn_download;
 var $previews;
+var $suffix;
 var $pre_to;
 
 // Flags
@@ -21,10 +23,10 @@ function togglePreviews(show) {
 
 function toggleButtons(show) {
   if (show) {
-    $btn.addClass('hide');
+    $btn_run.addClass('hide');
     $btn_loading.removeClass('hide');
   } else {
-    $btn.removeClass('hide');
+    $btn_run.removeClass('hide');
     $btn_loading.addClass('hide');
   }
 }
@@ -56,6 +58,11 @@ function handleScrapeError(response) {
   toggleButtons(false);
 }
 
+function handleDownload() {
+  var suffix = $suffix.val();
+  alert('¯\\_(ツ)_/¯');
+}
+
 // Requests
 
 function doScrapeRequest(cb) {
@@ -70,7 +77,6 @@ function doScrapeRequest(cb) {
 
  /**
   * handleScrapeBtnClick
-  *
   */
 function handleScrapeBtnClick($event) {
   if (idle) {
@@ -82,14 +88,17 @@ function handleScrapeBtnClick($event) {
 /**
  * Init
  */
-
 function init() {
-  $btn = $('#scrapebtn');
+  $btn_run = $('#scrapebtn');
   $btn_loading = $('#loadbtn');
+  $btn_download = $('#downloadbtn');
   $previews = $('.preview-container');
+  $suffix = $('#suffix');
   $pre_to = $('#preview_total_offense');
 
-  $btn.click(handleScrapeBtnClick);
+  // Register click handlers
+  $btn_run.click(handleScrapeBtnClick);
+  $btn_download.click(handleDownload);
 }
 
 $(document).ready(init);
